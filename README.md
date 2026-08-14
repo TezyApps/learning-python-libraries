@@ -2,17 +2,29 @@
 
 Set of functions, modules, and classes where it has pre-written codes to perform some tasks.
 
-> ![TIP] 
+> [!TIP]
 > what's `pip`
 > pip - Preffered Installer Programmer
 
 ## Pandas library:
 
-- For Data Analysis
-
 ```py
+# For Data Analysis
 import pandas as pd
+
+# For playing with numbers or numerical installations
+import numpy as np
+
+# for data visualization - matplotlib, Seaborn, plotly
+from matplotlib import pyplot as plt
+# or
+import matplotlib.pyplot as plt
 ```
+
+## Types of Datatypes:
+
+1. Discrete  - Countable, it will never have any units, you can't measure that
+2. Continuos - It will have units, it's measurable
 
 ## DataSets - Resources
 
