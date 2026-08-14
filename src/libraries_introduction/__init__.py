@@ -1,10 +1,26 @@
 import pandas as pd
+import numpy as np
 
-def __test_pandas_lib() -> None:
+def __students_by_gender(df: pd.DataFrame) -> None:
+    genders = df["gender"].to_numpy()
+    values, counts = np.unique(genders, return_counts = True)
+    result = dict(zip(values, counts))
+    heading = "Gender\t:\tCount"
+    print("\n")
+    print("=" * (len(heading) + 8))
+    print(heading)
+    print("=" * (len(heading) + 8))
+    for gender, count in result.items():
+        print(f"{gender}\t:\t{int(count)}")
+    print("=" * (len(heading) + 8))
+    print("\n")
+
+def __get_data() -> pd.DataFrame:
     print("Exploring pandas library")
     data_set = pd.read_csv("resources/datasets/student-performance.csv")
-    print(type(data_set))
+    return data_set
 
 def main() -> None:
     print("Hello from libraries-introduction!")
-    __test_pandas_lib()
+    df = __get_data()
+    __students_by_gender(df)
