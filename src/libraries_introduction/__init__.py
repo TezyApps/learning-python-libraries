@@ -1,5 +1,10 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+
+def __plot(df: pd.DataFrame):
+    plt.hist(x=df['attendance_percent'])
+    plt.show() # required in vscode, to display the graph in external window.
 
 def __students_by_gender(df: pd.DataFrame) -> None:
     genders = df["gender"].to_numpy()
@@ -24,3 +29,4 @@ def main() -> None:
     print("Hello from libraries-introduction!")
     df = __get_data()
     __students_by_gender(df)
+    __plot(df=df)
