@@ -2,7 +2,7 @@
 
 Set of functions, modules, and classes where it has pre-written codes to perform some tasks.
 
-![TIP]: 
+> ![TIP] 
 > what's `pip`
 > pip - Preffered Installer Programmer
 
