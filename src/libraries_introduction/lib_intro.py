@@ -25,9 +25,10 @@ def __get_data() -> pd.DataFrame:
     data_set = pd.read_csv("resources/datasets/student-performance.csv")
     return data_set
 
-def intro_to_libraries() -> None:
-    print("Intro to libraries")
-    df = __get_data()
-    __students_by_gender(df)
-    __plot(df=df)
-    print("End intro to libraries\n")
+def intro_to_libraries(show: bool = True) -> None:
+    if show:
+        print("Intro to libraries")
+        df = __get_data()
+        __students_by_gender(df)
+        __plot(df=df)
+        print("End intro to libraries\n")

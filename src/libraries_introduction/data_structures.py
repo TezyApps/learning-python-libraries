@@ -17,8 +17,9 @@ def __set_example() -> None:
     fruits.add('Watermelon')
     print(fruits)
 
-def all_examples() -> None:
-    print("Data Structures\n")
-    __list_example()
-    __set_example()
-    print("\nEnd of Data Structures")
+def all_examples(show: bool = True) -> None:
+    if show:
+        print("Data Structures\n")
+        __list_example()
+        __set_example()
+        print("\nEnd of Data Structures")
