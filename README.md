@@ -6,6 +6,40 @@ Set of functions, modules, and classes where it has pre-written codes to perform
 > what's `pip`
 > pip - Preffered Installer Programmer
 
+## Learnings so far
+
+A snapshot of what's been covered in this project (see commit history for the full trail):
+
+- **Project setup** — scaffolded with `uv`, added `pandas`, `numpy`, and `matplotlib` as
+  dependencies (`Add pandas as dependencies`, `Adding numpy as deps`, `Adding matplotlib deps`),
+  and fixed up `.gitignore`.
+- **Core data structures** — revisited plain Python `list` (indexing, including negative
+  indices) and `set` (unordered, unique values — duplicate `.add()` calls are silently
+  ignored) in `data_structures.py`.
+- **Reading real data** — loaded a CSV sample dataset (`resources/datasets/student-performance.csv`)
+  with `pandas.read_csv()` as the first hands-on pandas exercise.
+- **First numpy + pandas combo** — pulled a DataFrame column out as a numpy array
+  (`df["gender"].to_numpy()`) and used `np.unique(..., return_counts=True)` to count students
+  per gender, then pretty-printed the result as a table (`lib_intro.py`).
+- **First plot** — used `matplotlib.pyplot.hist()` to visualize the `attendance_percent`
+  column as a histogram, calling `plt.show()` to render it (needed explicitly in VS Code).
+- **Datatypes classification** — learned the discrete vs. continuous distinction for data
+  (see below).
+- **Modularizing the code** — extracted the ad-hoc examples into their own modules
+  (`data_structures.py`, `lib_intro.py`) and added a small `utils` module with `log_title()`
+  for consistent section headers in console output.
+- **Pandas deep dive** — scaffolded a dedicated `pandas_deep_dive` package
+  (`lesson.py` + `__init__.py`) with reusable functions for exploring a DataFrame:
+  - `load_data()` — read a CSV into a DataFrame
+  - `describe_data()` — summary statistics via `DataFrame.describe()`
+  - `check_for_data_quality()` — duplicate rows (`.duplicated().sum()`) and missing values
+    (`.isnull().sum()`) per column
+  - `show_cols_data_types()` — inspect column dtypes via `.dtypes`
+  - Wired together in `explore_data_set()`, using `utils.log_title()` to label each step's
+    output.
+- **Dataset resources** — collected a list of places to find free sample datasets (Excel
+  and CSV) for further pandas practice (see below).
+
 ## Pandas library:
 
 ```py
