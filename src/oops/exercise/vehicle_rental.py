@@ -67,6 +67,8 @@ class Car(Vehicle):
     def __init(self, brand, doors, speed, battery_level):
         super.__init__(brand)
         self.doors = doors
+        self.speed = speed
+        self.battery_level = battery_level
 
     def make_sound(self) -> str:
         return "vroom"
@@ -79,8 +81,8 @@ class Bike(Vehicle):
     def __init(self, brand, has_carriers, speed, battery_level):
         super.__init__(brand)
         self.has_carriers = has_carriers
-        self._speed = super().speed(speed)
-        self.__battery_level = super().battery_level(battery_level)
+        self.speed = speed
+        self.battery_level = battery_level
 
     def make_sound(self) -> str:
         return "dubudubu"
