@@ -7,7 +7,7 @@ class Vehicle(ABC):
 
     total_vehicles: int
 
-    def __init(self, brand):
+    def __init__(self, brand):
         self.brand = brand
         self._speed = 0
         self.__battery_level = 0
@@ -64,7 +64,7 @@ class Vehicle(ABC):
 
 class Car(Vehicle):
 
-    def __init(self, brand, doors, speed, battery_level):
+    def __init__(self, brand, doors, speed, battery_level):
         super.__init__(brand)
         self.doors = doors
         self.speed = speed
@@ -78,7 +78,7 @@ class Car(Vehicle):
 
 class Bike(Vehicle):
 
-    def __init(self, brand, has_carriers, speed, battery_level):
+    def __init__(self, brand, has_carriers, speed, battery_level):
         super.__init__(brand)
         self.has_carriers = has_carriers
         self.speed = speed
