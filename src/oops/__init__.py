@@ -3,7 +3,21 @@ from . import oops_intro as oops
 from .exercise import vehicle_rental as vr
 
 def __oops_practice():
-    mazda = vr.Car("Mazda 3", 4, 220, 1)
+    try:
+        vr.Vehicle("Skeleton Vehicle")
+    except TypeError:
+        print("Abstract classes shouldn't be initiated")
+
+    mazda = vr.Car("Mazda 3", 4, 220, 90)
+    print(f"{mazda.brand} speed / battery_level is clamped to {mazda.speed} and {mazda.battery_level}")
+    
+    bike = vr.Bike("Royal Enfield", True, 180, 80)
+
+    for vehicle in [mazda, bike]:
+        print(vehicle.describe())
+
+    print(f"Total vehicles in the rental so far: {vr.Vehicle.total_vehicles}")
+    
 
 def __manager_example():
     manager = {'name': 'John Doe', 'role': 'manager', 'password': 'admin', 'tasks': []}
@@ -31,3 +45,4 @@ def main() -> None:
     print("Welcome to OOPS in Python!")
     __manager_example()
     __employee_example()
+    __oops_practice()
