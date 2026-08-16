@@ -16,6 +16,7 @@ dependencies = [
 [project.scripts]
 lesson = "libraries_introduction:main"
 oops = "oops:main"
+charts = "charts:main"
 
 [build-system]
 requires = ["uv_build>=0.12.4,<0.13.0"]
