@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
 
-def __clamped(value: int, min_value: int = 0, max_value: int = 200) -> int:
+def _clamped(value: int, min_value: int = 0, max_value: int = 200) -> int:
     return max(min_value, min(value, max_value))
 
 class Vehicle(ABC):
 
-    total_vehicles: int
+    total_vehicles: int = 0
 
     def __init__(self, brand):
         self.brand = brand
@@ -21,7 +21,7 @@ class Vehicle(ABC):
 
     @speed.setter
     def speed(self, value: int) -> int:
-        self._speed = __clamped(value)
+        self._speed = _clamped(value)
         return self._speed
 
     @property 
@@ -30,7 +30,7 @@ class Vehicle(ABC):
 
     @battery_level.setter
     def battery_level(self, value: int) -> int:
-        self.__battery_level = __clamped(value)
+        self.__battery_level = _clamped(value)
         return self.__battery_level
 
     #endregion
@@ -65,7 +65,7 @@ class Vehicle(ABC):
 class Car(Vehicle):
 
     def __init__(self, brand, doors, speed, battery_level):
-        super.__init__(brand)
+        super().__init__(brand)
         self.doors = doors
         self.speed = speed
         self.battery_level = battery_level
@@ -79,7 +79,7 @@ class Car(Vehicle):
 class Bike(Vehicle):
 
     def __init__(self, brand, has_carriers, speed, battery_level):
-        super.__init__(brand)
+        super().__init__(brand)
         self.has_carriers = has_carriers
         self.speed = speed
         self.battery_level = battery_level
