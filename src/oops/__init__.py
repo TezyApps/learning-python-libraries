@@ -1,5 +1,9 @@
 
 from . import oops_intro as oops
+from .exercise import vehicle_rental as vr
+
+def __oops_practice():
+    mazda = vr.Car("Mazda 3", 4, 220, 1)
 
 def __manager_example():
     manager = {'name': 'John Doe', 'role': 'manager', 'password': 'admin', 'tasks': []}
