@@ -62,6 +62,26 @@ import matplotlib.pyplot as plt
 1. Discrete  - Countable, it will never have any units, you can't measure that
 2. Continuos - It will have units, it's measurable
 
+## ML / DS - Terminologies
+
+For a pandas DataFrame of shape `(1000, 12)` (1000 rows, 12 columns):
+
+- ✅ **"1000 observations & 12 features"** — standard ML/DS terminology. Rows = observations
+  (also called samples/instances), columns = features (also called variables/attributes/
+  predictors).
+- ⚠️ **"1000 records & 12 parameters"** — half right:
+  - "records" for rows is fine (a common, more database-flavored synonym for observations).
+  - "parameters" for columns is a common mix-up. In ML/statistics, a **parameter** is a value
+    the *model learns* during training (e.g. regression coefficients, neural net weights) —
+    not an input column. Columns should be called **features**, never parameters.
+
+| Term | Refers to |
+|---|---|
+| observation / sample / record / instance | a row |
+| feature / variable / attribute / predictor | a column (input) |
+| parameter | a value the model learns (e.g. weights, coefficients) |
+| hyperparameter | a value *you* set before training (e.g. learning rate, `k` in k-NN) |
+
 ## DataSets - Resources
 
 Free sample datasets for practicing with `pandas` (many available as Excel/`.xlsx`):
