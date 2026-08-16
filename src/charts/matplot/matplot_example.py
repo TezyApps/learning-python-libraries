@@ -1,35 +1,21 @@
-#region imports
 
 import pandas as pd
 from matplotlib import pyplot as plt
+import seaborn as sns
 # import matplotlib.pyplot as plt
 
 from utils import log_title as lt, log_body as lb
 
-#endregion
-
-#region PyPlotExample Class
-
 class PyPlotExample():
-
-    #region - Constructor
     
     def __init__(self, csv_file_path) -> None:
         self.__csv_file_path = csv_file_path
         self.__data = pd.read_csv(csv_file_path)
 
-    #endregion
-
-    #region - Properties
-
     @property
     def data(self) -> pd.DataFrame:
         return self.__data
-
-    #endregion
-
-    #region - Public Methods
-
+    
     def data_overview(
             self, 
             show_records: bool = False, 
@@ -52,19 +38,28 @@ class PyPlotExample():
             lt('Data Types')
             lb(self.data.dtypes)
 
-    def univariate_analysis(self):
-        pass
+    def univariate_analysis(self, col: str):
+        self.__hist_mpg(col)
 
     def bivariate_analysis(self):
-        pass
+        self.__bar_chart('cyl', 'mpg')
 
     def multivariate_analysis(self):
-        pass
+        self.__pairplot()
 
-    #endregion
+    #region - Private methods
     
-    #region - Private Methods
+    def __hist_mpg(self, col: str):
+        plt.hist(x = self.data[col])
+        plt.show()
+
+    def __bar_chart(self, x_axis_discrete: str, y_axis_continuous: str):
+        # plt.bar(self.data[x_axis_discrete], height=self.data[y_axis_continuous])
+        sns.barplot(self.data, x=x_axis_discrete, y=y_axis_continuous)
+        plt.show()
+
+    def __pairplot(self):
+        sns.pairplot(self.data)
+        plt.show()
 
     #endregion
-
-#endregion
