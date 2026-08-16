@@ -20,18 +20,16 @@ class Vehicle(ABC):
         return self._speed
 
     @speed.setter
-    def speed(self, value: int) -> int:
+    def speed(self, value: int) -> None:
         self._speed = _clamped(value)
-        return self._speed
 
     @property 
     def battery_level(self) -> int:
         return self.__battery_level
 
     @battery_level.setter
-    def battery_level(self, value: int) -> int:
+    def battery_level(self, value: int) -> None:
         self.__battery_level = _clamped(value)
-        return self.__battery_level
 
     #endregion
 
