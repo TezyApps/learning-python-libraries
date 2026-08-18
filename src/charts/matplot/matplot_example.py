@@ -39,27 +39,27 @@ class PyPlotExample():
             lb(self.data.dtypes)
 
     def univariate_analysis(self, col: str):
-        self.__hist_mpg(col)
+        self.hist_mpg(col)
 
-    def bivariate_analysis(self):
-        self.__bar_chart('cyl', 'mpg')
+    def bivariate_analysis(self, x = 'cyl', y = 'mpg'):
+        self.bar_chart(x, y)
 
     def multivariate_analysis(self):
-        self.__pairplot()
+        self.pairplot(self.data)
 
-    #region - Private methods
+    #region - Public methods #2
     
-    def __hist_mpg(self, col: str):
+    def hist_mpg(self, col: str):
         plt.hist(x = self.data[col])
         plt.show()
 
-    def __bar_chart(self, x_axis_discrete: str, y_axis_continuous: str):
+    def bar_chart(self, x_axis_discrete: str, y_axis_continuous: str):
         # plt.bar(self.data[x_axis_discrete], height=self.data[y_axis_continuous])
         sns.barplot(self.data, x=x_axis_discrete, y=y_axis_continuous)
         plt.show()
 
-    def __pairplot(self):
-        sns.pairplot(self.data)
+    def pairplot(self, data):
+        sns.pairplot(data)
         plt.show()
 
     #endregion
